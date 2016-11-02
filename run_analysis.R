@@ -44,7 +44,7 @@ new_x <- cbind(x_all[,mean_feature_idx], x_all[,stdev_feature_idx])
 activity_label <- read.table("activity_labels.txt")
 
 # Merge y_all with activity labels to add descriptive names for each activity 
-y_all_label <- merge(y_all, activity_label, by.x="V1", by.y="V1", sort=FALSE)
+y_all_label <- join(y_all, activity_label, by="V1", type="left")
 
 
 ############################################################################
